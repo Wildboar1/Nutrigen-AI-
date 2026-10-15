@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --lavender-cream: #FDFBD4;
+  --lavender-olive: #BDB96A;
+  --lavender-periwinkle: #C1BFFF;
+  --lavender-orchid: #CF6DFC;
+  --bg-deep: #090710;
+  --bg-surface: #100C1E;
+  --bg-card: rgba(22, 17, 40, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Headings use Nunito */
+  h1, h2, h3, h4, h5, h6 { font-family: 'Nunito', sans-serif; }
+  background-color: #0b0814;
+  color: #f1edfd;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle at 15% 15%, rgba(207, 109, 252, 0.12) 0%, transparent 40%),
+              radial-gradient(circle at 85% 65%, rgba(138, 77, 240, 0.1) 0%, transparent 45%),
+              radial-gradient(circle at 50% 100%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+              #0b0814;
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(16, 12, 30, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(193, 191, 255, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 109, 252, 0.6);
+}
+
+/* Glassmorphism & UI Card Utilities */
+.glass-panel {
+  background: rgba(20, 15, 38, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(193, 191, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(193, 191, 255, 0.4);
+  box-shadow: 0 10px 30px -5px rgba(207, 109, 252, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(207, 109, 252, 0.4);
+  box-shadow: 0 16px 40px -10px rgba(207, 109, 252, 0.22);
+}
+
+.glass-glow-purple {
+  box-shadow: 0 0 35px -5px rgba(207, 109, 252, 0.3);
+}
+
+.glass-glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.3);
+}
+
+/* Text Gradients */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #ffffff 0%, #C1BFFF 50%, #CF6DFC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #CF6DFC 0%, #a84df0 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FDFBD4 0%, #facc15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Futuristic Animated Gradient Background */
+.animated-mesh-bg {
+  background: linear-gradient(-45deg, #130a24, #1f0b38, #0e1538, #180929);
+  background-size: 400% 400%;
+  animation: meshGradient 15s ease infinite;
+}
+
+@keyframes meshGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Lavender & Futuristic Action Buttons */
+.btn-lavender {
+  background: linear-gradient(135deg, #CF6DFC 0%, #8b31ea 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 20px 0 rgba(207, 109, 252, 0.4);
+  transition: all 0.25s ease;
+}
+.btn-lavender:hover {
+  background: linear-gradient(135deg, #db81ff 0%, #9b3ff3 100%);
+  box-shadow: 0 6px 28px 0 rgba(207, 109, 252, 0.6);
+  transform: translateY(-1.5px);
+}
+.btn-lavender:active {
+  transform: translateY(0);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(193, 191, 255, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(207, 109, 252, 0.5);
+  box-shadow: 0 4px 20px 0 rgba(207, 109, 252, 0.2);
+}
+
+/* Input Styles */
+.input-modern, .input-lavender {
+  background-color: rgba(20, 15, 38, 0.7);
+  border: 1px solid rgba(193, 191, 255, 0.2);
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+.input-modern:focus, .input-lavender:focus {
+  outline: none;
+  border-color: #CF6DFC;
+  box-shadow: 0 0 0 3px rgba(207, 109, 252, 0.25);
+  background-color: rgba(25, 18, 48, 0.9);
+}
+
+/* Enforce padding for inputs with left/right icons */
+.input-modern.pl-11, .input-lavender.pl-11, input[class*="pl-11"] {
+  padding-left: 2.75rem !important;
+}
+.input-modern.pl-12, .input-lavender.pl-12, input[class*="pl-12"] {
+  padding-left: 3rem !important;
+}
+.input-modern.pr-11, .input-lavender.pr-11, input[class*="pr-11"] {
+  padding-right: 2.75rem !important;
+}
+
+/* Pulsing AI Aura Ring */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.w-7-8 {
+  width: 87%;
+}
+
+
+
